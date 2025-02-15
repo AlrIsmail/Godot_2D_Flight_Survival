@@ -2,7 +2,7 @@
 
 This project is a 2D game prototype developed using the Godot Engine. The game features a player character, enemies, pickups, and a user interface. The game includes mechanics for spawning enemies, increasing difficulty over time, and handling player interactions such as health changes and game over scenarios.
 
-![Gameplay](./assets/Gameplay.gif)
+![Gameplay](https://github.com/AlrIsmail/Godot_2D_Flight_Survival/blob/main/Assets/Gameplay.gif)
 ## Project Structure
 
 The project is organized into several directories and files:
