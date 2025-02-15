@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://blli600alk163"]
+
+[ext_resource type="Texture2D" uid="uid://c6n8lgmqewna5" path="res://Assets/version_1.16_giant/blue_endsega64.png" id="1_3hmfr"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_spcvr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js2k3"]
+atlas = ExtResource("1_3hmfr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j548m"]
+atlas = ExtResource("1_3hmfr")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bctrd"]
+atlas = ExtResource("1_3hmfr")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndnjh"]
+atlas = ExtResource("1_3hmfr")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7peb"]
+atlas = ExtResource("1_3hmfr")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xchk"]
+atlas = ExtResource("1_3hmfr")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20ilv"]
+atlas = ExtResource("1_3hmfr")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh7uq"]
+atlas = ExtResource("1_3hmfr")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkgnd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js2k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j548m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bctrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndnjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7peb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xchk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20ilv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh7uq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kegux"]
+size = Vector2(26, 18)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_spcvr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_tkgnd")
+autoplay = "default"
+frame = 4
+frame_progress = 0.74499
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_kegux")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_kegux")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

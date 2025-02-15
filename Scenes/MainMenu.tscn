@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2ydepm68ii3s"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_1amho"]
+[ext_resource type="Texture2D" uid="uid://dabp48m617tkk" path="res://Assets/kenney_pixelshmup/Ships/ship_0000.png" id="1_bft10"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_16ltr"]
+font_size = 31
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xrmyx"]
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1amho")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.1, 0.1, 0.1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_bft10")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Sheesh Shooter"
+label_settings = SubResource("LabelSettings_16ltr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Start"
+icon = SubResource("ViewportTexture_xrmyx")
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Exit"
+
+[node name="FooterLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Made by Yato with Godot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/StartButton" to="." method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

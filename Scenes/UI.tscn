@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciaqhnwxx1s6k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4dxyq"]
+font_size = 30
+
+[node name="Ui" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 174.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.512
+anchor_bottom = 0.625
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 126.568
+offset_bottom = 32.875
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthLabel" type="Label" parent="Control/Panel/VBox"]
+layout_mode = 2
+text = "Health: 100"
+label_settings = SubResource("LabelSettings_4dxyq")
+
+[node name="TimerLabel" type="Label" parent="Control/Panel/VBox"]
+layout_mode = 2
+text = "Time: 0"
+label_settings = SubResource("LabelSettings_4dxyq")
+
+[node name="ScoreLabel" type="Label" parent="Control/Panel/VBox"]
+layout_mode = 2
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_4dxyq")
