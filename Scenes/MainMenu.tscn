@@ -34,7 +34,7 @@ stretch_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Sheesh Shooter"
+text = "Flight Survival"
 label_settings = SubResource("LabelSettings_16ltr")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -54,7 +54,7 @@ text = "Exit"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Made by Yato with Godot"
+text = "Made by Ismail with Godot"
 horizontal_alignment = 1
 vertical_alignment = 1
 
