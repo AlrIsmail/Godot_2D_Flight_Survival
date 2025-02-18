@@ -80,6 +80,6 @@ This project uses assets from various sources. Please refer to the individual as
 ## Acknowledgements
 
 - [Godot Engine](https://godotengine.org/)
-- [Kenney.nl](https://kenney.nl/assets) for providing free game assets.
+- [Kenney.nl](https://kenney.nl/assets), [Itch.io](https://itch.io/game-assets) and their respective creators for providing free game assets.
 
 For more information, please refer to the individual script and scene files in the project.
